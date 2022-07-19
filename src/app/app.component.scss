@@ -1,0 +1,60 @@
+@import url(../styles.scss);
+
+section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+    background-color: var(--fundo-principal);
+    padding: 10px;
+    height: 100vh;
+}
+
+.apps {
+    grid-row: 1 / 2;
+}
+
+.menu-mobile {
+    @media screen and (max-width: 949px) {
+        display: block !important;
+    }
+
+    @media screen and (min-width: 949px) {
+        display: none !important;
+    }
+}
+
+.nav-desktop {
+    @media screen and (max-width: 949px) {
+        display: none !important;
+    }
+    
+    @media screen and (min-width: 949px) {
+        display: block !important;
+    }
+}
+
+.nav {
+    @media screen and (min-width: 949px) {
+        grid-column: 1 / 2;
+        height: calc(100vh - 30px);
+        padding-bottom: 30px;
+        position: relative;
+        box-shadow: 0 3px 8px 0 rgb(15 15 20 / 20%);
+    }
+}
+
+.content {
+    @media screen and (min-width: 949px) {
+        grid-column: 2 / 6;
+    }
+
+    @media screen and (max-width: 949px) {
+        grid-column: 2 / 6;
+    }
+}
+
+::ng-deep .ng-sidebar {
+    grid-column: 1 / 2;
+    height: calc(100vh - 30px);
+}
